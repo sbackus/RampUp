@@ -1,11 +1,31 @@
-(1..100).each do |number|
+# (1..100).each do |number|
+# 	if number%3 == 0 && number%5 ==0
+# 		puts "fizzbuzz"
+# 	elsif number%3 == 0
+# 		puts "fizz"
+# 	elsif number%5 == 0
+# 		puts "buzz"
+# 	else
+# 		puts number
+# 	end
+# end
+
+
+
+def fizzbuzz(number)
 	if number%3 == 0 && number%5 ==0
-		puts "fizzbuzz"
+		return "fizzbuzz"
 	elsif number%3 == 0
-		puts "fizz"
+		return "fizz"
 	elsif number%5 == 0
-		puts "buzz"
+		return "buzz"
 	else
-		puts number
+		return number
 	end
 end
+
+
+(1..100).each do |number|
+	puts fizzbuzz(number)
+end
+
