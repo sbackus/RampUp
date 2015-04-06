@@ -7,11 +7,12 @@ def decrypt(message)
 end
 
 def shift_text(message, shift_number)
-	decrypted_message = []
+	decrypted_message = ""
 	message.each_byte do |byte|
-		decrypted_message << (byte + shift_number)
+		shifted_byte = byte + shift_number
+		decrypted_message << (shifted_byte).chr
 	end
-	decrypted_message.pack('c*')
+	decrypted_message
 end
 
 m = encrypt("This is a message")
