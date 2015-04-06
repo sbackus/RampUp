@@ -1,15 +1,15 @@
 def encrypt(message)
-	encrypted_message = []
-	message.each_byte do |byte|
-		encrypted_message << (byte + 5)
-	end
-	encrypted_message.pack('c*')
+	shift_text(message, 5)
 end
 
 def decrypt(message)
+	shift_text(message, -5)
+end
+
+def shift_text(message, shift_number)
 	decrypted_message = []
 	message.each_byte do |byte|
-		decrypted_message << (byte - 5)
+		decrypted_message << (byte + shift_number)
 	end
 	decrypted_message.pack('c*')
 end
